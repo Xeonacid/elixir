@@ -12,6 +12,6 @@ list_tags_h()
     grep "glibc" |
     grep -v "fedora" |
     grep -v "cvs" |
-    tac |
-    sed -r 's/^glibc-([0-9]*)(\.[0-9]*)$/v\1 v\1\2 glibc-\1\2/'
+    grep -v -E "glibc-[0-9]*\.[0-9]*[\.-]" |
+    tac
 }
