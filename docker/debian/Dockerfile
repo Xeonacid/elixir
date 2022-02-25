@@ -77,6 +77,8 @@ RUN \
   echo -e "\nHttpProtocolOptions Unsafe" >> /etc/apache2/apache.conf && \
   a2enmod cgi rewrite
 
+COPY favicon.ico /usr/local/elixir/http/
+
 EXPOSE 80
 
 ENTRYPOINT ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
